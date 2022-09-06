@@ -6,6 +6,8 @@ import 'package:ticket_booking/screens/ticket_view.dart';
 import 'package:ticket_booking/utils/app_info_list.dart';
 import 'package:ticket_booking/utils/app_styles.dart';
 
+import '../utils/app_layout.dart';
+
 class HomeScreen extends StatefulWidget {
   
   const HomeScreen({super.key});
@@ -44,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Container(
-                          width: 34,
-                          height: 34,
+                          width: AppLayout.getHeight(34),
+                          height: AppLayout.getHeight(34),
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(
