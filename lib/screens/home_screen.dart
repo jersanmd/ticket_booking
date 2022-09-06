@@ -7,6 +7,7 @@ import 'package:ticket_booking/utils/app_info_list.dart';
 import 'package:ticket_booking/utils/app_styles.dart';
 
 import '../utils/app_layout.dart';
+import '../widgets/double_text_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   
@@ -74,15 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],),
                   ),
                   const Gap(40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Upcoming Flights', style: Styles.headlineStyle2),
-                      InkWell(
-                        onTap: () {},
-                        child: Text('View all', style: Styles.textStyle.copyWith(color: Styles.primaryColor)))
-                    ],
-                  )
+                  const AppDoubleTextWidget(bigText: 'Upcoming Flights', smallText: 'View All') 
                   
               ],
             ),
@@ -101,15 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Hotels', style: Styles.headlineStyle2),
-                InkWell(
-                  onTap: () {},
-                  child: Text('View all', style: Styles.textStyle.copyWith(color: Styles.primaryColor)))
-              ],
-            ),
+            child: const AppDoubleTextWidget(bigText: 'Hotels', smallText: 'View All')
           ),
           
           const Gap(15),
