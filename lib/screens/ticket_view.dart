@@ -5,7 +5,10 @@ import 'package:ticket_booking/utils/app_styles.dart';
 import 'package:ticket_booking/widgets/thick_container.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+
+  final Map<String, dynamic> ticket;
+
+  const TicketView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text('NYC', style: Styles.headlineStyle3.copyWith(color: Colors.white)),
+                      Text(ticket['from']['code'], style: Styles.headlineStyle3.copyWith(color: Colors.white)),
                       const Spacer(),
                       const ThickContainer(),
                       Expanded(
@@ -65,7 +68,7 @@ class TicketView extends StatelessWidget {
                       ),
                       const ThickContainer(),
                       const Spacer(),
-                      Text('LDN', style: Styles.headlineStyle3.copyWith(color: Colors.white))
+                      Text(ticket['to']['code'], style: Styles.headlineStyle3.copyWith(color: Colors.white))
                     ],
                   ),
                   const Gap(3),
@@ -74,12 +77,12 @@ class TicketView extends StatelessWidget {
                     children: [
                     SizedBox(
                       width: 100,
-                      child: Text('New York', style: Styles.headlineStyle4.copyWith(color: Colors.white)),
+                      child: Text(ticket['from']['name'], style: Styles.headlineStyle4.copyWith(color: Colors.white)),
                     ),
-                    Text('8H 30M', style: Styles.headlineStyle4.copyWith(color: Colors.white)),
+                    Text(ticket['flying_time'], style: Styles.headlineStyle4.copyWith(color: Colors.white)),
                     SizedBox(
                       width: 100,
-                      child: Text('London', textAlign: TextAlign.end,style: Styles.headlineStyle4.copyWith(color: Colors.white)),
+                      child: Text(ticket['to']['name'], textAlign: TextAlign.end,style: Styles.headlineStyle4.copyWith(color: Colors.white)),
                     ),
                   ],)
                 ],
@@ -162,7 +165,7 @@ class TicketView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('1 MAY', style: Styles.headlineStyle3.copyWith(color: Colors.white)),
+                          Text(ticket['date'], style: Styles.headlineStyle3.copyWith(color: Colors.white)),
                           const Gap(5),
                           Text('Date', style: Styles.headlineStyle4.copyWith(color: Colors.white)),
                         ],
@@ -170,7 +173,7 @@ class TicketView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('08:00 AM', style: Styles.headlineStyle3.copyWith(color: Colors.white)),
+                          Text(ticket['departure_time'], style: Styles.headlineStyle3.copyWith(color: Colors.white)),
                           const Gap(5),
                           Text('Departure Time', style: Styles.headlineStyle4.copyWith(color: Colors.white)),
                         ],
@@ -178,7 +181,7 @@ class TicketView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text('23', style: Styles.headlineStyle3.copyWith(color: Colors.white)),
+                          Text(ticket['number'].toString(), style: Styles.headlineStyle3.copyWith(color: Colors.white)),
                           const Gap(5),
                           Text('Number', style: Styles.headlineStyle4.copyWith(color: Colors.white)),
                         ],

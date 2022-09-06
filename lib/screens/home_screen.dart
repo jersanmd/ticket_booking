@@ -1,11 +1,13 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket_booking/screens/hotel_screen.dart';
 import 'package:ticket_booking/screens/ticket_view.dart';
-import 'package:ticket_booking/utils/app_layout.dart';
+import 'package:ticket_booking/utils/app_info_list.dart';
 import 'package:ticket_booking/utils/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
+  
   const HomeScreen({super.key});
 
   @override
@@ -83,15 +85,37 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+
           const Gap(15),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
             child: Row(
-              children: const [
-                TicketView(),
-                TicketView(),
+              children: ticketList.map(
+                (singleTicket) => TicketView(ticket: singleTicket)).toList()
+            ),
+          ),
+
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Hotels', style: Styles.headlineStyle2),
+                InkWell(
+                  onTap: () {},
+                  child: Text('View all', style: Styles.textStyle.copyWith(color: Styles.primaryColor)))
               ],
+            ),
+          ),
+          
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: hotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList()
             ),
           )
         ],
