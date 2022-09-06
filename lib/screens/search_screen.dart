@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking/widgets/double_text_widget.dart';
 import 'package:ticket_booking/widgets/icon_text_widget.dart';
+import 'package:ticket_booking/widgets/switch_button_widget.dart';
 
 import '../utils/app_layout.dart';
 import '../utils/app_styles.dart';
@@ -21,37 +22,7 @@ class SearchScreen extends StatelessWidget {
             Gap(AppLayout.getHeight(40)),
             Text("What are \nyou looking for?", style: Styles.headlineStyle1.copyWith(fontSize: AppLayout.getWidth(35))),
             Gap(AppLayout.getHeight(20)),
-            FittedBox(
-              child: Container(
-                padding: const EdgeInsets.all(3.5),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF4F7FD),
-                  borderRadius: BorderRadius.circular(AppLayout.getHeight(50)),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: size.width*0.44,
-                      padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.horizontal(left: Radius.circular(AppLayout.getHeight(50)))
-                      ),
-                      child: const Center(child: Text('Airline Tickets')),
-                    ),
-                    Container(
-                      width: size.width*0.44,
-                      padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF4F7FD),
-                        borderRadius: BorderRadius.horizontal(right: Radius.circular(AppLayout.getHeight(50)))
-                      ),
-                      child: const Center(child: Text('Hotels')),
-                    )
-                  ],
-                ),
-              ),
-            ),
+            const SwitchButton(firstTab: 'Airline Tickets', secondTab: 'Hotels'),
             Gap(AppLayout.getHeight(25)),
             const AppIconText(icon: Icons.flight_takeoff, text: 'Departure'),
             Gap(AppLayout.getHeight(20)),
