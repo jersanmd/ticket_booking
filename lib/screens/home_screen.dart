@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Text('Good Morning', style: Styles.headlineStyle3),
                           const Gap(5),
-                          Text('Book Tickets', style: Styles.headlineStyle1),
+                          Text('Jersan Balago', style: Styles.headlineStyle1),
                         ],
                       ), 
                       Container(
@@ -47,12 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Container(
-                          width: AppLayout.getHeight(34),
-                          height: AppLayout.getHeight(34),
+                          width: AppLayout.getHeight(40),
+                          height: AppLayout.getHeight(40),
                           decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
                             image: DecorationImage(
                               image: AssetImage(
-                                  'assets/images/logo.png'),
+                                  'assets/images/jersan.jpeg'),
                               fit: BoxFit.fill,
                             )
                           ),
@@ -104,7 +105,8 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: hotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList()
             ),
-          )
+          ),
+          const Gap(25),
         ],
       ),
     );
