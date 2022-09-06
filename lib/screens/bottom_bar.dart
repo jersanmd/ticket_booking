@@ -39,7 +39,7 @@ class _BottomBarState extends State<BottomBar> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.blueGrey,
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.shifting,
         unselectedItemColor: const Color(0xFF526480),
         items: const[
           BottomNavigationBarItem(

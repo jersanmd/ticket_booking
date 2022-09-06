@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: ListView(
-        padding: EdgeInsets.all(AppLayout.getHeight(20)),
+        padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(20), horizontal: AppLayout.getWidth(30)),
         children: [
           Gap(AppLayout.getHeight(40)),
           Row(
@@ -137,7 +137,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(25)),
           Text('Accumulated miles', style: Styles.headlineStyle2),
-          Gap(AppLayout.getHeight(15)),
+          Gap(AppLayout.getHeight(20)),
           Column(
             children: [
               Text('192802', style: TextStyle(

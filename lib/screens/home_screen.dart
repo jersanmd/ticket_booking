@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
@@ -92,13 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: const AppDoubleTextWidget(bigText: 'Hotels', smallText: 'View All')
           ),
           
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: hotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList()
             ),
           ),
-          const Gap(25),
+          Gap(AppLayout.getHeight(25)),
         ],
       ),
     );
